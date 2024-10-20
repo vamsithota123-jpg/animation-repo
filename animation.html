@@ -1,0 +1,49 @@
+<div class="cube">
+    <div class="face front"></div>
+    <div class="face back"></div>
+    <div class="face left"></div>
+    <div class="face right"></div>
+    <div class="face top"></div>
+    <div class="face bottom"></div>
+  </div>
+<style>
+    body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #000;
+  margin: 0;
+}
+
+.cube {
+  width: 150px;
+  height: 150px;
+  position: relative;
+  transform-style: preserve-3d;
+  transform: rotateX(45deg) rotateY(45deg);
+  animation: rotateCube 4s infinite linear;
+}
+
+.face {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  background: red;
+  border: 2px solid #fff;
+  opacity: 0.9;
+}
+
+.front  { transform: translateZ(75px); background: #f00; }
+.back   { transform: rotateY(180deg) translateZ(75px); background: #0f0; }
+.left   { transform: rotateY(-90deg) translateZ(75px); background: #00f; }
+.right  { transform: rotateY(90deg) translateZ(75px); background: #ff0; }
+.top    { transform: rotateX(90deg) translateZ(75px); background: #f0f; }
+.bottom { transform: rotateX(-90deg) translateZ(75px); background: #0ff; }
+
+@keyframes rotateCube {
+  from { transform: rotateX(45deg) rotateY(45deg); }
+  to { transform: rotateX(405deg) rotateY(405deg); }
+}
+
+</style>  
